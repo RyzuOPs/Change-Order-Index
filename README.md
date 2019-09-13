@@ -25,7 +25,11 @@ Download:
 
 * [Change Order Index v.1.0](https://github.com/RyzuOPs/Change-Order-Index) - relase zip.
 
-or clone to /modules direcotry of your shop:
+or clone to /modules directory of your shop:
 
 * [https://github.com/RyzuOPs/Change-Order-Index](https://github.com/RyzuOPs/Change-Order-Index) - clone module from Git repo
+
+```
+git clone https://github.com/RyzuOPs/Change-Order-Index
+```
 
