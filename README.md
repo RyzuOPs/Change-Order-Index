@@ -8,7 +8,7 @@ PFX-20256
 
 ## How it works?
 
-This is simple override of classes/order/Order.php changeing the way of generating reference number in orders.
+This is simple override of classes/order/Order.php changing the way of generating reference number in orders.
 
 No need to change anything in the files, just install the module and activate override in module settings.
 After activating the override, the next order placed in your store will have the format as in the preview available in the module settings.
