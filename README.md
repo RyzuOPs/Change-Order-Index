@@ -6,36 +6,35 @@ This module override Order class to change order reference to numeric (from orde
 PFX-20256
 ```
 
-## How it works?
-hfghgf
+### How it works?
+
 This is simple override of classes/order/Order.php changing the way of generating reference number in orders.
 
 No need to change anything in the files, just install the module and activate override in module settings.
 After activating the override, the next order placed in your store will have the format as in the preview available in the module settings.
 
- fghfg 
+
 ### Prerequisites
 
 This module is written for Prestashop 1.7.x
 
 
-### Installing
-
-## Download relase or clone
 
 
+## Installing
+
+### Download relase or clone
+
+Download:
 * [Change Order Index v.1.0](https://github.com/RyzuOPs/Change-Order-Index/changeorderindex-v1.0.zip) - relase zip.
 
 or clone to /modules directory of your shop:
-
-* [https://github.com/RyzuOPs/Change-Order-Index](https://github.com/RyzuOPs/Change-Order-Index) - clone module from Git repo
-
 ```
 git clone https://github.com/RyzuOPs/Change-Order-Index
 ```
-## Install 
+### Install 
 
-# Install through module manager
+#### Install through module manager
 
 You can install module through manager in the backoffice:
 
@@ -46,6 +45,14 @@ Improve -> Module Manager -> Upload a module
 
 ```
 3. Configure module
+
+#### Install through Prestashop console
+
+
+``
+./bin/console prestashop:module install changeorderindex
+``
+
 
 ## Configure
 
