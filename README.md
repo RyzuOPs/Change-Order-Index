@@ -26,7 +26,7 @@ This module is written for Prestashop 1.7.x
 ### Download relase or clone
 
 Download:
-* [Change Order Index v.1.0](https://github.com/RyzuOPs/Change-Order-Index/changeorderindex-v1.0.zip) - relase zip.
+* [Change Order Index v.1.0](https://github.com/RyzuOPs/ChangeOrderIndex/changeorderindex-v1.0.zip) - relase zip.
 
 or clone to /modules directory of your shop:
 ```
@@ -48,11 +48,9 @@ Improve -> Module Manager -> Upload a module
 
 #### Install through Prestashop console
 
-
 ``
 ./bin/console prestashop:module install changeorderindex
 ``
-
 
 ## Configure
 
