@@ -3,7 +3,7 @@
 global $_MODULE;
 $_MODULE = array();
 $_MODULE['<{changeorderindex}prestashop>changeorderindex_73417fbbd4e4fb438162a534c682012c'] = 'Zmiana numeru referencyjnego zamówienia';
-$_MODULE['<{changeorderindex}prestashop>changeorderindex_7474ac464f383adf062b7bfa48ad7299'] = 'Ten moduł naspisuje klasę Order, żeby zmienić numer referencyjny zamówienia.';
+$_MODULE['<{changeorderindex}prestashop>changeorderindex_7474ac464f383adf062b7bfa48ad7299'] = 'Ten moduł nadpisuje klasę Order, żeby zmienić numer referencyjny zamówienia.';
 $_MODULE['<{changeorderindex}prestashop>changeorderindex_10ad116a3eb7b6e5382ada40c393102c'] = 'Odinstalować moduł?';
 $_MODULE['<{changeorderindex}prestashop>changeorderindex_96d4dadd096605d5813d2c6bdf82e82c'] = 'Ustawienia zapisane';
 $_MODULE['<{changeorderindex}prestashop>changeorderindex_94de83b4baba6ff9af2009b4a7c6764b'] = 'Coś poszło nie tak! Sprawdź pola fiormularza.';
