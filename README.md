@@ -13,13 +13,9 @@ This is simple override of classes/order/Order.php changing the way of generatin
 No need to change anything in the files, just install the module and activate override in module settings.
 After activating the override, the next order placed in your store will have the format as in the preview available in the module settings.
 
-
 ### Prerequisites
 
 This module is written for Prestashop 1.7.x
-
-
-
 
 ## Installing
 
@@ -58,8 +54,3 @@ Override is disabled by default after installation.
 To override work properly turn it on in the module settings.
 
 You can use prefix and separator.
-
-
-
-
-
