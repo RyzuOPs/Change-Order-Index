@@ -12,19 +12,16 @@ class Order extends OrderCore
 				WHERE TABLE_SCHEMA = \"" . _DB_NAME_ . "\"
 				AND TABLE_NAME = \"" . _DB_PREFIX_ . "orders\"";
             $refNo = (int) Db::getInstance()->getValue($q);
-            if ($pfx != NULL) {
+            if ($pfx != null) {
                 if ($pfx_separator) {
                     $pfx = $pfx . "-";
-                } 
+                }
                 $refNo = $pfx . $refNo;
             }
                         
             return $refNo;
-
         } else {
-
             return parent::generateReference();
-
         }
     }
 }
