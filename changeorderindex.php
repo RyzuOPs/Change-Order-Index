@@ -185,11 +185,19 @@ class Changeorderindex extends Module
         $helper->identifier = $this->identifier;
         $helper->submit_action = 'submit_'.$this->name;
         $helper->currentIndex = $this->context->link->getAdminLink('AdminModules', false).
-            '&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
+            '&configure='.$this->name.
+            '&tab_module='.$this->tab.
+            '&module_name='.$this->name;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
-        $helper->fields_value['CHANGEORDERINDEX_OVERRIDE_ENABLED'] = Configuration::get('CHANGEORDERINDEX_OVERRIDE_ENABLED');
-        $helper->fields_value['CHANGEORDERINDEX_PFX'] = Configuration::get('CHANGEORDERINDEX_PFX');
-        $helper->fields_value['CHANGEORDERINDEX_PFX_SEPARATOR'] = Configuration::get('CHANGEORDERINDEX_PFX_SEPARATOR');
+        $helper->fields_value[
+            'CHANGEORDERINDEX_OVERRIDE_ENABLED'
+            ] = Configuration::get('CHANGEORDERINDEX_OVERRIDE_ENABLED');
+        $helper->fields_value[
+            'CHANGEORDERINDEX_PFX'
+            ] = Configuration::get('CHANGEORDERINDEX_PFX');
+        $helper->fields_value[
+            'CHANGEORDERINDEX_PFX_SEPARATOR'
+            ] = Configuration::get('CHANGEORDERINDEX_PFX_SEPARATOR');
         
         return $helper->generateForm(array($fields_form));
     }
