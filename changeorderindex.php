@@ -180,7 +180,8 @@ class Changeorderindex extends Module
         $helper->table = $this->table;
         $helper->default_form_language = $lang->id;
         $helper->module = $this;
-        $helper->allow_employee_form_lang = Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') ? Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') : 0;
+        $helper->allow_employee_form_lang = Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') ?
+            Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') : 0;
         $helper->identifier = $this->identifier;
         $helper->submit_action = 'submit_'.$this->name;
         $helper->currentIndex = $this->context->link->getAdminLink('AdminModules', false).
@@ -207,11 +208,17 @@ class Changeorderindex extends Module
             3
         );
 
-        if (Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED', (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')) &&
-            Configuration::updateValue('CHANGEORDERINDEX_PFX', $pfx) &&
-            Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR', (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR'))) {
+        if (Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED',
+                (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')) &&
+            Configuration::updateValue('CHANGEORDERINDEX_PFX',
+                $pfx) &&
+            Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR',
+                (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR'))
+            ) {
+
             return true;
         } else {
+
             return false;
         }
     }
