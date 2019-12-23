@@ -1,6 +1,6 @@
 <div class="panel">
 
-    <b>{l s='Status:'}</b> 
+    <b>{l s='Status:' mod='changeorderindex'}</b> 
     
     <table class="table">
         <tr>
