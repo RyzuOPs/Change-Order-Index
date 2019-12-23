@@ -6,7 +6,6 @@ if (!defined('_PS_VERSION_')) {
 
 class Changeorderindex extends Module
 {
-
     public function __construct()
     {
         $this->name = 'changeorderindex';
@@ -16,7 +15,7 @@ class Changeorderindex extends Module
         $this->author_uri = 'https://ryszkiewicz.cloud';
         $this->need_instance = 0;
         $this->ps_versions_compliancy = array(
-            'min' => '1.7', 
+            'min' => '1.7',
             'max' => _PS_VERSION_);
         $this->bootstrap = true;
 
@@ -34,7 +33,7 @@ class Changeorderindex extends Module
         }
 
         return parent::install() &&
-            Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED', false) &&    
+            Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED', false) &&
             Configuration::updateValue('CHANGEORDERINDEX_PFX', "PFX") &&
             Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR', false);
     }
@@ -57,14 +56,15 @@ class Changeorderindex extends Module
     {
         $output = '';
         
-        if (Tools::isSubmit('submit_'.$this->name)) {    
-            if ($this->postProcess())
-                $output .= $this->displayConfirmation($this->l('Settings saved') );
-            else 
-                $output .= $this->displayWarning($this->l('Something went wrong! Check form values.'));             
+        if (Tools::isSubmit('submit_'.$this->name)) {
+            if ($this->postProcess()) {
+                $output .= $this->displayConfirmation($this->l('Settings saved'));
+            } else {
+                $output .= $this->displayWarning($this->l('Something went wrong! Check form values.'));
+            }
         }
             
-        $vars = array (
+        $vars = array(
             $this->name . '_name' => $this->displayName,
             $this->name . '_version' => $this->version,
             $this->name . '_compliancy' => $this->ps_versions_compliancy['min'],
@@ -107,7 +107,9 @@ class Changeorderindex extends Module
                         'label' => $this->l('Enable override?'),
                         'name' => 'CHANGEORDERINDEX_OVERRIDE_ENABLED',
                         'is_bool' => true,
-                        'desc' => $this->l('Set "Yes" to enable override orders class. Override will not work if not enabled here even if file exists in /overrides directory .'),
+                        'desc' => $this->l('Set "Yes" to enable override orders class. 
+                            Override will not work if not enabled here even if file exists in /overrides directory.
+                            '),
                         'values' => array(
                             array(
                                 'id' => 'active_on',
@@ -181,7 +183,8 @@ class Changeorderindex extends Module
         $helper->allow_employee_form_lang = Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') ? Configuration::get('PS_BO_ALLOW_EMPLOYEE_FORM_LANG') : 0;
         $helper->identifier = $this->identifier;
         $helper->submit_action = 'submit_'.$this->name;
-        $helper->currentIndex = $this->context->link->getAdminLink('AdminModules', false).'&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
+        $helper->currentIndex = $this->context->link->getAdminLink('AdminModules', false).
+            '&configure='.$this->name.'&tab_module='.$this->tab.'&module_name='.$this->name;
         $helper->token = Tools::getAdminTokenLite('AdminModules');
         $helper->fields_value['CHANGEORDERINDEX_OVERRIDE_ENABLED'] = Configuration::get('CHANGEORDERINDEX_OVERRIDE_ENABLED');
         $helper->fields_value['CHANGEORDERINDEX_PFX'] = Configuration::get('CHANGEORDERINDEX_PFX');
@@ -204,16 +207,12 @@ class Changeorderindex extends Module
             3
         );
 
-        if (
-            Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED', (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')) &&
+        if (Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED', (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')) &&
             Configuration::updateValue('CHANGEORDERINDEX_PFX', $pfx) &&
-            Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR', (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR'))
-        ) {
-
-            return True;
+            Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR', (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR'))) {
+            return true;
         } else {
-
-            return False;
+            return false;
         }
     }
 }
