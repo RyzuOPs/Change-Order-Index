@@ -208,17 +208,21 @@ class Changeorderindex extends Module
             3
         );
 
-        if (Configuration::updateValue('CHANGEORDERINDEX_OVERRIDE_ENABLED',
-                (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')) &&
-            Configuration::updateValue('CHANGEORDERINDEX_PFX',
-                $pfx) &&
-            Configuration::updateValue('CHANGEORDERINDEX_PFX_SEPARATOR',
-                (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR'))
+        if (Configuration::updateValue(
+            'CHANGEORDERINDEX_OVERRIDE_ENABLED',
+            (bool)Tools::getValue('CHANGEORDERINDEX_OVERRIDE_ENABLED')
+        ) &&
+        Configuration::updateValue(
+            'CHANGEORDERINDEX_PFX',
+            $pfx
+        ) &&
+        Configuration::updateValue(
+            'CHANGEORDERINDEX_PFX_SEPARATOR',
+            (bool)Tools::getValue('CHANGEORDERINDEX_PFX_SEPARATOR')
+        )
             ) {
-
             return true;
         } else {
-
             return false;
         }
     }
